@@ -18,11 +18,13 @@ public class Client {
     }
 
     public void run() {
+    	System.out.print("$ ");
         String line = readLine();
         try {
             ExpressionParser parser = new ExpressionParser(line);
             Expression expression = parser.getExpression();
             result = expression.getResult();
+            System.out.println(result);
         } catch (InvalidNumericFormatException e) {
             System.out.println("Invalid input numeric format");
         } catch (DivideByZeroException e) {
